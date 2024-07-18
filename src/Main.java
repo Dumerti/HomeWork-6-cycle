@@ -86,8 +86,9 @@ public class Main {
         int totalSalary = 0;
         int month = 0;
         while (totalSalary <= 2459000) {
-            System.out.println("Месяц " + (month = month + 1) + " накоплений равна " + totalSalary + " рублей");
             totalSalary = totalSalary + contribution;
+            month += 1  ;
+            System.out.println("Месяц " + month + " накоплений равна " + totalSalary + " рублей");
         }
         System.out.println(" ");
         System.out.println("Задача №2");
@@ -107,16 +108,16 @@ public class Main {
         System.out.println(" ");
         System.out.println("Задача №3");
 
-        int y = 12_000_000;
+        int population = 12_000_000;
         int year = 1;
-        int born = 17; // рождаемость на 1000
-        int death = 8; // смертность на 1000
-        int bd = born - death; // разница рождаемости и смертности за год 9
-        int bornOnYear = 12_000_000 / (bd * 1000); // количество человек прибавишх население за год с учетом смертности
-        for (; year <= 10; year = year + 1) {
-            y = y + bornOnYear;
-            System.out.println("Год " + year + ", численность населения составляет " + y);
+        for (int i = 1; i <= 10; i++) {
+            int birthRate = 17 * population / 1000;
+            int deathRate = 8 * population / 1000;
+            year += 1;
+            population = population + birthRate - deathRate;
+            System.out.println("Год " + year + ", численость населения составляет " + population);
         }
+
 
         System.out.println();
         System.out.println("Задание №4");
@@ -158,8 +159,10 @@ public class Main {
         System.out.println();
         System.out.println("Задача №7");
 
-        for (int fri = 5; fri < 31 ; fri += 7) {
-            System.out.println("Сегодня пятница " + fri + " необходимо подготовить отчет");
+        int friday = 5;
+        while (friday < 31) {
+            System.out.println("Сегодня пятница, " + friday + "-е число, необходимо подготовить отчет");
+            friday += 7;
         }
 
         System.out.println();
